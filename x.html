@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More | College Events</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero {
+            position: relative;
+            background: url(https://mir-s3-cdn-cf.behance.net/projects/404/6334a169178893.Y3JvcCwyNTQ2LDE5OTEsMCwxNTE.jpg) center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            height: 400px;
+            z-index: 1;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        .hero h1 {
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-top: 10px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .cta-button {
+            margin-top: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .cta-button button {
+            margin: 10px;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button button:hover {
+            background-color: #007bff;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .details-section {
+            padding: 60px 20px;
+        }
+
+        .details-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        .details-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .schedule {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .schedule ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .schedule ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .schedule ul li i {
+            font-size: 20px;
+            color: #4facfe;
+            margin-right: 10px;
+        }
+
+        .register-section {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .register-section button {
+            font-size: 18px;
+            padding: 15px 40px;
+            border-radius: 8px;
+            background-color: #4facfe;
+            color: white;
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .register-section button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cat{
+            font-size: 50px;
+        }
+
+        footer {
+            background-color: #4facfe;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .guest-speakers, .event-categories, .testimonials, .sponsors {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .guest-speakers img, .testimonials img {
+            border-radius: 10px; 
+            height: 300px;
+            width: 250px;
+        }
+
+        .testimonials blockquote {
+            font-style: italic;
+            color: #555;
+            margin: 20px 0;
+        }
+
+        .sponsors img {
+            max-width: 120px;
+            margin: 10px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item button {
+            width: 100%;
+            text-align: left;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 12px;
+        }
+
+        .gallery img {
+            border-radius: 8px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="sub-header hero">
+        <nav class="navbar navbar-expand-sm sticky-top">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand"><img src="images/logo.png" alt="Logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav1">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav1">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="course.html" class="nav-link">COURSE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="blog.html" class="nav-link">BLOG</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="event.html" class="nav-link">EVENT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">CONTACT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link">LOGIN</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <h1>Cultural Fest 2025</h1>
+        <p>Experience the Magic of Culture, Music, and Art</p>
+    </section>
+    <!-- <div class="hero">
+        <h1>Cultural Fest 2025</h1>
+        <p>Experience the Magic of Culture, Music, and Art</p>
+    </div> -->
+
+    <div class="details-section container">
+        <h2>Event Highlights</h2>
+        <p>Get ready for an extraordinary experience at Cultural Fest 2025! Enjoy live performances, inspiring workshops, and a vibrant display of art and talent from across the community. Be a part of this unforgettable journey!</p>
+
+        <h2 class="mt-5">Event Schedule</h2>
+        <div class="schedule">
+            <h4>Day 1: Performances and Exhibits</h4>
+            <ul>
+                <li><i class="bi bi-music-note"></i> 10:00 AM - Inaugural Ceremony</li>
+                <li><i class="bi bi-person-lines-fill"></i> 11:00 AM - Dance Performances</li>
+                <li><i class="bi bi-brush"></i> 2:00 PM - Art Exhibition Tour</li>
+                <li><i class="bi bi-volume-up"></i> 4:00 PM - Music Concert</li>
+            </ul>
+            <h4 class="mt-4">Day 2: Workshops and Competitions</h4>
+            <ul>
+                <li><i class="bi bi-camera"></i> 10:00 AM - Photography Workshop</li>
+                <li><i class="bi bi-emoji-smile"></i> 1:00 PM - Culinary Competition</li>
+                <li><i class="bi bi-trophy"></i> 3:00 PM - Talent Show</li>
+                <li><i class="bi bi-award"></i> 5:00 PM - Closing Ceremony</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Guest Speakers Section -->
+    <div class="section">
+        <h2 class="section-title">Special Guests</h2>
+        <div class="guest-speakers container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <img src="https://www.capitaldigestivecare.com/wp-content/uploads/2022/10/John-Smith-5-x-7-scaled.jpg" alt="Guest 1">
+                    <h5>Dr. John Smith</h5>
+                    <p>Renowned Scientist and Innovator</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="http://3.bp.blogspot.com/_L8OFDplnQ7o/TUiRy8a8S9I/AAAAAAAADks/QSlMjyLPBRA/s1600/Alex-Brown.jpg" alt="Guest 2">
+                    <h5>Ms. Jane Doe</h5>
+                    <p>Motivational Speaker and Author</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="https://www.purshology.com/wp-content/uploads/2020/09/Alex-Brown-headshot-crop.jpg" alt="Guest 3">
+                    <h5>Mr. Alex Brown</h5>
+                    <p>Award-Winning Filmmaker</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Categories Section -->
+    <div class="section">
+        <h2 class="section-title">Event Categories</h2>
+        <div class="event-categories container">
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <div class="cat">🎶</div>
+                    <h5>Music & Dance</h5>
+                </div>
+                <div class="col-md-3">
+                    <div class="cat">🎨</div>
+                    <h5>Art & Exhibitions</h5>
+                </div>
+                <div class="col-md-3">
+                    <div class="cat">🤖</div>
+                    <h5>Technology</h5>
+                </div>
+                <div class="col-md-3">
+                    <div class="cat">🏆</div>
+                    <h5>Competitions</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="section">
+        <h2 class="section-title">What People Say</h2>
+        <div class="testimonials container">
+            <div class="row">
+                <div class="col-md-6">
+                    <blockquote>“The event was fantastic! The speakers and workshops were incredibly inspiring.”</blockquote>
+                    <p>- Sarah L.</p>
+                </div>
+                <div class="col-md-6">
+                    <blockquote>“I loved the cultural fest. The performances were breathtaking!”</blockquote>
+                    <p>- Mike T.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sponsors Section -->
+    <div class="section">
+        <h2 class="section-title">Our Sponsors</h2>
+        <div class="sponsors container text-center">
+            <img src="images/newyork.png" alt="Sponsor 1">
+            <img src="images/newyork.png" alt="Sponsor 2">
+            <img src="images/newyork.png" alt="Sponsor 3">
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq container">
+            <div class="faq-item">
+                <button class="btn btn-light" data-bs-toggle="collapse" data-bs-target="#faq1">What is the dress code for the event?</button>
+                <div id="faq1" class="collapse">The dress code is casual for most events. Formal attire is required for specific ceremonies.</div>
+            </div>
+            <div class="faq-item">
+                <button class="btn btn-light" data-bs-toggle="collapse" data-bs-target="#faq2">How can I register for workshops?</button>
+                <div id="faq2" class="collapse">You can register online via our registration portal or at the venue on the event day.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Map Section -->
+    <div class="section">
+        <h2 class="section-title">Event Location</h2>
+        <div class="map container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.96305771548632!3d-37.814107979751816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577f1d2ee5f7f0a!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1614314518428!5m2!1sen!2sau"></iframe>
+        </div>
+    </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

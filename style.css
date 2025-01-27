@@ -9,7 +9,7 @@
     background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url(images/banner.png);
     background-position: center;
     background-size: cover;
-    position: relative;
+    /* position: relative; */
 }
 .text-box{
     width: 90%;
@@ -43,11 +43,22 @@
     transition: 1s;
 }
 nav{
-    margin-right: 50px; 
     font-size: large;
+    position: relative;
+    top: 0;
 }
 .nav-item .nav-link{
     color: white;
+}
+.container-fluid span{
+    color: #ccc;
+    font-size:50px;
+    align-items: center;
+    text-align: center;
+    font-weight: 500;
+}
+ul li{
+    padding-right: 5px;
 }
 
 /* Course */
@@ -93,7 +104,7 @@ h3{
     }
 }
 
-/* Cmapus */
+/* Campus */
 .campus{
     width: 80%;
     margin: auto;
