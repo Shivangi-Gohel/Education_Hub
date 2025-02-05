@@ -10,6 +10,18 @@
     background-position: center;
     background-size: cover;
 }
+.text{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.text p{
+    margin: 15px 0 40px 0;
+}
 .text-box{
     width: 90%;
     color: #fff;
@@ -21,9 +33,6 @@
 }
 .text-box h1{
     font-weight: 600;
-}
-.text-box p{
-    margin: 10px 0 40px;
 }
 .hero-btn{
     display: inline-block;
@@ -44,8 +53,16 @@
 nav{
     font-size: large;
     position: relative;
-    background-color: rgba(1, 1, 23, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: #000000;
+}
+.header span{
+    margin-left: 5px;
+}
+.about span{
+    margin-left: 5px;
 }
 .nav-item .nav-link{
     color: #ccc;
@@ -173,7 +190,6 @@ h3{
 }
 .facilities-col:hover {
     transform: translateY(-10px);
-    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); */
 }
 .facilities-col img{
     width: 100%;
@@ -204,6 +220,11 @@ h3{
     padding: 25px;
     cursor: pointer;
     display: flex;
+    box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
+    transition: 0.5s;
+}
+.testimonials-col:hover{
+    transform: translateY(-10px);
 }
 .testimonials-col img{
     height: 40px;
@@ -355,6 +376,71 @@ h3{
 }
 .comment-form button{
     margin: 10px 0;
+}
+
+/* Event */
+.events{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.events-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    transition: 0.5s;
+}
+.events-col:hover {
+    transform: translateY(-10px);
+}
+.events-col img{
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+}
+.events-col p{
+    padding: 0;
+}
+.events-col h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.features-section {
+    padding: 60px 20px;
+}
+
+.features-section h3 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.feature {
+    text-align: center;
+    padding: 20px;
+}
+
+.feature-icon {
+    font-size: 50px;
+    color: #4facfe;
+    margin-bottom: 15px;
+}
+.learn{
+    /* border: 1px solid #f44336; */
+    background: transparent;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    transition: 0.5s;
+}
+.learn:hover{
+    background-color: #d10f01;
 }
 
 /* Contact us */

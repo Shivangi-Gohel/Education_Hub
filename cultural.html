@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More | College Events</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            padding: 0;
+            text-align: center;
+        }
+
+        .hero {
+            position: relative;
+            background: url(https://mir-s3-cdn-cf.behance.net/projects/404/6334a169178893.Y3JvcCwyNTQ2LDE5OTEsMCwxNTE.jpg) center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            height: 400px;
+            z-index: 1;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-top: 10px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .cta-button {
+            margin-top: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .cta-button button {
+            margin: 10px;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button button:hover {
+            background-color: #007bff;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .details-section {
+            padding: 60px 20px;
+        }
+
+        .details-section h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .details-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .schedule {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .schedule ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .schedule ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .schedule ul li i {
+            font-size: 20px;
+            color: #4facfe;
+            margin-right: 10px;
+        }
+
+        .register-section {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .register-section button {
+            font-size: 18px;
+            padding: 15px 40px;
+            border-radius: 8px;
+            background-color: #4facfe;
+            color: white;
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .register-section button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cat {
+            font-size: 50px;
+        }
+
+        footer {
+            background-color: #4facfe;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .guest-speakers,
+        .event-categories,
+        .testimonials,
+        .sponsors {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .guest-speakers img,
+        .testimonials img {
+            border-radius: 10px;
+            height: 300px;
+            width: 250px;
+        }
+
+        .testimonials blockquote {
+            font-style: italic;
+            color: #555;
+            margin: 20px 0;
+        }
+
+        .sponsors img {
+            max-width: 120px;
+            margin: 10px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item button {
+            width: 100%;
+            text-align: left;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 12px;
+        }
+
+        .gallery img {
+            border-radius: 8px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight-title,
+        .schedule-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            margin-top: 50px;
+            color: #333;
+            animation: bounce 1.5s infinite alternate;
+        }
+
+        /* Bounce animation */
+        @keyframes bounce {
+            0% {
+                transform: translateY(0px);
+            }
+
+            100% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Text */
+        .highlight-text {
+            font-size: 1.2rem;
+            font-weight: 400;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            line-height: 1.6;
+        }
+
+        /* Schedule Styling */
+        .schedule {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            /* background: rgba(255, 255, 255, 0.2); */
+            background-color: #fff3f3;
+        }
+
+        .schedule .bi {
+            color: #f44336;
+        }
+
+        .schedule h4 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .schedule ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .schedule li {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            padding: 10px;
+            margin: 5px 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .schedule li:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+
+        .schedule li i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: #ffda79;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .highlight-title,
+            .schedule-title {
+                font-size: 1.8rem;
+            }
+
+            .schedule li {
+                font-size: 1rem;
+            }
+        }
+
+        .testimonials {
+            width: 87%;
+            background-color: white;
+            margin: auto;
+            padding-top: 100px;
+            text-align: center;
+        }
+
+        .testimonials-col {
+            flex-basis: 44%;
+            border-radius: 10px;
+            margin-bottom: 5%;
+            text-align: left;
+            background: #fff3f3;
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
+            transition: 0.5s;
+        }
+
+        .testimonials-col:hover {
+            transform: translateY(-10px);
+        }
+
+        .testimonials-col img {
+            height: 40px;
+            margin-left: 5px;
+            margin-right: 30px;
+            border-radius: 50%;
+        }
+
+        .testimonials-col p {
+            padding: 0;
+        }
+
+        .testimonials-col h3 {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .star img {
+            margin: 10px 0 0 0;
+            height: 25px;
+            width: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="about">
+        <nav class="navbar navbar-expand-sm shadow-sm fixed-top">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand"><img
+                        src="https://i.pinimg.com/originals/24/51/d0/2451d029c30fe0ac97c32a46378899a0.png"
+                        style="width: 60px; height: 60px; filter: brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(5000%) hue-rotate(0deg);"
+                        alt="Logo"><span>EduHub</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav1">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav1">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="course.html" class="nav-link">COURSE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="blog.html" class="nav-link">BLOG</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="event.html" class="nav-link">EVENT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">CONTACT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link">LOGIN</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="text-box">
+            <h1 text-center>Cultural Fest 2025</h1>
+            <!-- <p>Experience the Magic of Culture, Music, and Art</p> -->
+        </div>
+    </section>
+
+    <div class="details-section container">
+        <h2 class="highlight-title">🎭 Event Highlights</h2>
+        <p class="highlight-text">Get ready for an extraordinary experience at <b>Cultural Fest 2025!</b> Enjoy live
+            performances, inspiring workshops, and a vibrant display of art and talent from across the community. Be a
+            part of this unforgettable journey! 🌟</p>
+
+        <h2 class="schedule-title">📅 Event Schedule</h2>
+        <div class="schedule">
+            <h4>🎶 Day 1: Performances and Exhibits</h4>
+            <ul>
+                <li><i class="bi bi-music-note"></i> <span>10:00 AM - Inaugural Ceremony</span></li>
+                <li><i class="bi bi-person-lines-fill"></i> <span>11:00 AM - Dance Performances</span></li>
+                <li><i class="bi bi-brush"></i> <span>2:00 PM - Art Exhibition Tour</span></li>
+                <li><i class="bi bi-volume-up"></i> <span>4:00 PM - Music Concert</span></li>
+            </ul>
+
+            <h4>🏆 Day 2: Workshops and Competitions</h4>
+            <ul>
+                <li><i class="bi bi-camera"></i> <span>10:00 AM - Photography Workshop</span></li>
+                <li><i class="bi bi-emoji-smile"></i> <span>1:00 PM - Culinary Competition</span></li>
+                <li><i class="bi bi-trophy"></i> <span>3:00 PM - Talent Show</span></li>
+                <li><i class="bi bi-award"></i> <span>5:00 PM - Closing Ceremony</span></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <section class="events">
+        <h1>Special Guests</h1>
+        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quo.</p> -->
+
+        <div class="row" style="margin-top: 20px;">
+            <div class="events-col">
+                <img src="https://www.capitaldigestivecare.com/wp-content/uploads/2022/10/John-Smith-5-x-7-scaled.jpg"
+                    alt="">
+                <h3>Dr. John Smith</h3>
+                <p>Renowned Scientist and Innovator</p>
+            </div>
+            <div class="events-col">
+                <img src="http://3.bp.blogspot.com/_L8OFDplnQ7o/TUiRy8a8S9I/AAAAAAAADks/QSlMjyLPBRA/s1600/Alex-Brown.jpg"
+                    alt="">
+                <h3>Ms. Jane Doe</h3>
+                <p>Motivational Speaker and Author</p>
+            </div>
+            <div class="events-col">
+                <img src="https://www.purshology.com/wp-content/uploads/2020/09/Alex-Brown-headshot-crop.jpg" alt="">
+                <h3>Mr. Alex Brown</h3>
+                <p>Award-Winning Filmmaker</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Categories Section -->
+    <div class="section">
+        <h2 class="section-title">Event Categories</h2>
+        <div class="event-categories container">
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <div class="cat">🎶</div>
+                    <h5>Music & Dance</h5>
+                </div>
+                <div class="col-md-3">
+                    <div class="cat">🎨</div>
+                    <h5>Art & Exhibitions</h5>
+                </div>
+                <div class="col-md-3">
+                    <div class="cat">🤖</div>
+                    <h5>Technology</h5>
+                </div>
+                <div class="col-md-3">
+                    <div class="cat">🏆</div>
+                    <h5>Competitions</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <!-- <div class="section">
+        <h2 class="section-title">What People Say</h2>
+        <div class="testimonials container">
+            <div class="row">
+                <div class="col-md-6">
+                    <blockquote>“The event was fantastic! The speakers and workshops were incredibly inspiring.”</blockquote>
+                    <p>- Sarah L.</p>
+                </div>
+                <div class="col-md-6">
+                    <blockquote>“I loved the cultural fest. The performances were breathtaking!”</blockquote>
+                    <p>- Mike T.</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <section class="testimonials">
+        <h1>What Our Student Says</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, facilis.</p>
+        <div class="row">
+            <div class="testimonials-col">
+                <img src="images/user1.jpg" alt="">
+                <div class="star">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis rem deleniti in non pariatur illo
+                        maiores rerum voluptatum tempora laudantium consectetur quam veniam eum tenetur delectus nam
+                        inventore amet veritatis cumque, expedita consequuntur laboriosam aspernatur? Voluptatem veniam
+                        necessitatibus non ut.</p>
+                    <h3>Christine Berkley</h3>
+                    <img src="images/star-solid.svg">
+                    <img src="images/star-solid.svg">
+                    <img src="images/star-solid.svg">
+                    <img src="images/star-solid.svg">
+                    <img src="images/star-regular.svg">
+                </div>
+            </div>
+            <div class="testimonials-col">
+                <img src="images/user2.jpg" alt="">
+                <div class="star">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis rem deleniti in non pariatur illo
+                        maiores rerum voluptatum tempora laudantium consectetur quam veniam eum tenetur delectus nam
+                        inventore amet veritatis cumque, expedita consequuntur laboriosam aspernatur? Voluptatem veniam
+                        necessitatibus non ut.</p>
+                    <h3>David Byer</h3>
+                    <img src="images/star-solid.svg">
+                    <img src="images/star-solid.svg">
+                    <img src="images/star-solid.svg">
+                    <img src="images/star-solid.svg">
+                    <img src="images/star-half-stroke-regular.svg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <div class="section">
+        <h2 class="section-title">Our Sponsors</h2>
+        <div class="sponsors container text-center">
+            <img src="images/newyork.png" alt="Sponsor 1">
+            <img src="images/newyork.png" alt="Sponsor 2">
+            <img src="images/newyork.png" alt="Sponsor 3">
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq container">
+            <div class="faq-item">
+                <button class="btn btn-light" data-bs-toggle="collapse" data-bs-target="#faq1">What is the dress code
+                    for the event?</button>
+                <div id="faq1" class="collapse">The dress code is casual for most events. Formal attire is required for
+                    specific ceremonies.</div>
+            </div>
+            <div class="faq-item">
+                <button class="btn btn-light" data-bs-toggle="collapse" data-bs-target="#faq2">How can I register for
+                    workshops?</button>
+                <div id="faq2" class="collapse">You can register online via our registration portal or at the venue on
+                    the event day.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Map Section -->
+    <div class="section">
+        <h2 class="section-title">Event Location</h2>
+        <div class="map container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.96305771548632!3d-37.814107979751816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577f1d2ee5f7f0a!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1614314518428!5m2!1sen!2sau"></iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro labore, aut quidem similique accusamus
+            repellat assumenda, voluptate deserunt <br>repudiandae architecto et ipsum saepe ad at aperiam blanditiis,
+            laudantium consequuntur iusto.</p>
+        <div class="icons">
+            <img src="images/facebook-brands-solid.svg">
+            <img src="images/twitter-brands-solid.svg">
+            <img src="images/instagram-brands-solid.svg">
+            <img src="images/linkedin-brands-solid.svg">
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
