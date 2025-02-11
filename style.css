@@ -77,6 +77,10 @@ nav {
 
 .nav-item .nav-link {
     color: #ccc;
+    transition: 0.5s;
+}
+.nav-item .nav-link:hover {
+    color:#f44336;
 }
 
 .container-fluid span {
@@ -97,6 +101,15 @@ ul li {
     margin: auto;
     text-align: center;
     padding-top: 100px;
+}
+
+.courses {
+    height: 60vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    color: #fff;
 }
 
 .course p {
@@ -322,7 +335,7 @@ h3 {
 .about {
     height: 60vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/background.jpg);
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://searchengineland.com/figz/wp-content/seloads/2018/04/responsive-design-ss-1.jpg);
     background-position: center;
     background-size: cover;
     color: #fff;
@@ -373,6 +386,15 @@ h3 {
     width: 80%;
     margin: auto;
     padding: 60px 0;
+}
+
+.blogs {
+    height: 60vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://digitallearning.eletsonline.com/wp-content/uploads/2017/12/1483617573-computer-course-banners-top.jpg);
+    background-position: center;
+    background-size: cover;
+    color: #fff;
 }
 
 .blog-left {
@@ -449,8 +471,12 @@ h3 {
 .events {
     width: 80%;
     margin: auto;
+    margin-top: 0;
     text-align: center;
     padding-top: 100px;
+}
+h2.section-title{
+    margin-top: 0;
 }
 
 .events-col {
@@ -532,6 +558,15 @@ h3 {
 .contact-us {
     width: 80%;
     margin: auto;
+}
+
+.contact {
+    height: 60vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://thumbs.dreamstime.com/b/contact-us-customer-support-hotline-people-connect-call-custo-130157516.jpg);
+    background-position: center;
+    background-size: cover; 
+    color: #fff;
 }
 
 .contact-col {
@@ -691,6 +726,12 @@ h3 {
     font-weight: 600;
     margin-bottom: 40px;
     color: #333;
+}
+h1.section-title{
+    margin-top: 0;
+}
+h3.section-title{
+    margin-top: 5px;
 }
 
 .sponsors img {
