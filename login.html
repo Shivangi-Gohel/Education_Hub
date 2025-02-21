@@ -5,21 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login and Sign-Up Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: "Poppins", serif;
             margin: 0;
             padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .form {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
 
-        .container {
+        .login-container {
             display: flex;
-            width: 1000px;
-            height: 600px;
+            flex-direction: row;
+            width: 50%;
+            max-width: 1000px;
+            height: auto;
             background-color: #fff;
             border-radius: 12px;
             overflow: hidden;
@@ -28,8 +42,7 @@
 
         .welcome-section {
             width: 50%;
-            /* background: linear-gradient(135deg, #a777e3, #6e8efb); */
-            background: url(https://wallpaperaccess.com/full/2314950.jpg);
+            background: url(https://wallpaperaccess.com/full/2314950.jpg) center/cover no-repeat;
             color: #fff;
             display: flex;
             justify-content: center;
@@ -41,62 +54,37 @@
         }
 
         .welcome-section h2 {
-            font-size: 28px;
+            font-size: 24px;
             margin-bottom: 15px;
-        }
-
-        .welcome-section p {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .welcome-section button {
-            padding: 12px 30px;
-            background-color: #fff;
-            color: #f44336;
-            border: none;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .welcome-section button:hover {
-            background-color: #f44336;
-            color: #fff;
         }
 
         .form-section {
             width: 50%;
             padding: 40px;
-            position: relative;
             display: none;
             flex-direction: column;
             justify-content: center;
-            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
         }
 
         .form-section.active {
-            opacity: 1;
-            visibility: visible;
-            position: static;
             display: flex;
         }
 
         .form-header {
             text-align: center;
             margin-bottom: 20px;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: #333;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
             font-size: 14px;
             font-weight: bold;
             color: #555;
@@ -104,32 +92,31 @@
 
         .form-group input {
             width: 100%;
-            padding: 15px;
-            margin-bottom: 17px;
-            outline: none;
+            padding: 12px;
             border: 1px solid #ccc;
             box-sizing: border-box;
+            border-radius: 5px;
         }
 
         .form-group button {
             width: 100%;
             padding: 12px;
-            background-color: #fff;
-            color: #f44336;
-            border: 1px solid #f44336;
+            background-color: #f44336;
+            color: #fff;
+            border: none;
             cursor: pointer;
             font-size: 16px;
             transition: background 0.3s;
+            border-radius: 5px;
         }
 
         .form-group button:hover {
-            color: #fff;
-            background-color: #f44336;
+            background-color: #d32f2f;
         }
 
         .toggle-link {
             text-align: center;
-            margin-top: 15px;
+            margin-top: 10px;
             font-size: 14px;
         }
 
@@ -137,100 +124,144 @@
             color: #f44336;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s;
         }
 
         .toggle-link a:hover {
-            color: #576eea;
+            color: #d32f2f;
         }
 
         @media (max-width: 768px) {
-            .container {
+            .login-container {
                 flex-direction: column;
-                width: 90%;
+                width: 95%;
                 height: auto;
             }
 
             .welcome-section {
                 width: 100%;
+                height: 200px;
                 padding: 20px;
             }
 
             .form-section {
-                width: 100%;
+                width: auto;
                 padding: 20px;
             }
         }
-
-        /* .form-group .in {
-            
-        } */
     </style>
 </head>
 
 <body>
+    <section class="login">
+        <nav class="navbar navbar-expand-sm shadow-sm fixed-top">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand"><img
+                        src="https://i.pinimg.com/originals/24/51/d0/2451d029c30fe0ac97c32a46378899a0.png"
+                        style="width: 60px; height: 60px; filter: brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(5000%) hue-rotate(0deg);"
+                        alt="Logo"><span>EduHub</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav1">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav1">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="course.html" class="nav-link">COURSE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="blog.html" class="nav-link">BLOG</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="event.html" class="nav-link">EVENT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">CONTACT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link">LOGIN</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
 
-    <div class="container">
-        <!-- Welcome Section -->
-        <div class="welcome-section">
-            <h2>Welcome Back!</h2>
-            <p>To stay connected with us, please login or sign up with your personal details.</p>
-            <button id="toggleToSignUp">Switch to Sign Up</button>
-            <button id="toggleToLogin" style="display: none;">Switch to Login</button>
-        </div>
+    <section class="form">
+        <div class="login-container">
+            <div class="welcome-section">
+                <h2>Welcome Back!</h2>
+                <p>To stay connected with us, please login or sign up.</p>
+            </div>
 
-        <!-- Login Form -->
-        <div class="form-section active" id="loginForm">
-            <div class="form-header">Login</div>
-            <form>
-                <div class="form-group">
-                    <label for="login-email">Email Address</label>
-                    <input type="email" id="login-email" placeholder="Enter your email" required>
-                </div>
-                <div class="form-group">
-                    <label for="login-password">Password</label>
-                    <input type="password" id="login-password" placeholder="Enter your password" required>
-                </div>
-                <div class="form-group">
-                    <button type="submit">Login</button>
-                </div>
-                <div class="toggle-link">
-                    Don't have an account? <a href="#" id="switchToSignUp">Sign Up</a>
-                </div>
-            </form>
-        </div>
+            <div class="form-section active" id="loginForm">
+                <div class="form-header">Login</div>
+                <form>
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Login</button>
+                    </div>
+                    <div class="toggle-link">
+                        Don't have an account? <a href="#" id="switchToSignUp">Sign Up</a>
+                    </div>
+                </form>
+            </div>
 
-        <!-- Sign-Up Form -->
-        <div class="form-section hidden" id="signUpForm">
-            <div class="form-header">Sign Up</div>
-            <form>
-                <div class="form-group">
-                    <label for="signup-name">Full Name</label>
-                    <input type="text" id="signup-name" class="in" placeholder="Enter your full name" required>
-                </div>
-                <div class="form-group">
-                    <label for="signup-email">Email Address</label>
-                    <input type="email" id="signup-email" placeholder="Enter your email" required>
-                </div>
-                <div class="form-group">
-                    <label for="signup-password">Password</label>
-                    <input type="password" id="signup-password" placeholder="Create a password" required>
-                </div>
-                <div class="form-group">
-                    <button type="submit">Sign Up</button>
-                </div>
-                <div class="toggle-link">
-                    Already have an account? <a href="#" id="switchToLogin">Login</a>
-                </div>
-            </form>
+            <div class="form-section" id="signUpForm">
+                <div class="form-header">Sign Up</div>
+                <form>
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" placeholder="Create a password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Sign Up</button>
+                    </div>
+                    <div class="toggle-link">
+                        Already have an account? <a href="#" id="switchToLogin">Login</a>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section class="footer" style="margin-top: 0;">
+        <h4>About Us</h4>
+        <p>With a diverse and dynamic community, Nexus University fosters a culture of collaboration, creativity, and
+            critical thinking. Our world-class faculty, state-of-the-art<br> facilities, and industry partnerships
+            provide students with the best opportunities for personal and professional growth. From cutting-edge
+            research centers<br> to a vibrant student life, we offer an environment that nurtures talent and transforms
+            potential into success.</p>
+        <div class="icons">
+            <img src="images/facebook-brands-solid.svg">
+            <img src="images/twitter-brands-solid.svg">
+            <img src="images/instagram-brands-solid.svg">
+            <img src="images/linkedin-brands-solid.svg">
+        </div>
+    </section>
 
     <script>
         const loginForm = document.getElementById("loginForm");
         const signUpForm = document.getElementById("signUpForm");
-        const toggleToSignUp = document.getElementById("toggleToSignUp");
-        const toggleToLogin = document.getElementById("toggleToLogin");
 
         document.getElementById("switchToSignUp").onclick = (e) => {
             e.preventDefault();
@@ -241,22 +272,31 @@
             e.preventDefault();
             toggleForms("login");
         };
-        toggleToSignUp.onclick = () => toggleForms("signup");
-        toggleToLogin.onclick = () => toggleForms("login");
 
         function toggleForms(form) {
             if (form === "signup") {
-                loginForm.style.display = "none";
-                signUpForm.style.display = "flex";
-                toggleToSignUp.style.display = "none";
-                toggleToLogin.style.display = "block";
-            } else if (form === 'login') {
-                signUpForm.style.display = "none";
-                loginForm.style.display = "flex";
-                toggleToLogin.style.display = "none";
-                toggleToSignUp.style.display = "block";
+                loginForm.classList.remove("active");
+                signUpForm.classList.add("active");
+            } else {
+                signUpForm.classList.remove("active");
+                loginForm.classList.add("active");
             }
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const loginButton = document.querySelector(".form-group button");
+
+            loginButton.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                // Display success message
+                alert("Login Successful!");
+
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 1000); // 1-second delay before redirection
+            });
+        });
     </script>
 
 </body>
